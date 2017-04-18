@@ -1,0 +1,49 @@
+.font-face(@alias, @name){
+  @font-face {
+    font-family: @alias;
+    src: url("../../fonts/@{name}.eot");
+    src: url("../../fonts/@{name} + .eot?#iefix") format("embedded-opentype"),
+  url("../fonts/@{name}.woff") format("woff"),
+  url("../fonts/@{name}.woff2") format("woff2"),
+  url("../fonts/@{name}.svg") format("svg"),
+  url("../fonts/@{name}.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+  }
+}
+
+.border-radius(@radius){
+  -webkit-border-radius:@radius;
+  -moz-border-radius:@radius;
+  border-radius:@radius;
+}
+
+.box-sizing(@box-model){
+  -webkit-box-sizing: @box-model;
+  -moz-box-sizing: @box-model;
+  box-sizing: @box-model;
+}
+
+.box-shadow(@shadow){
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+.flex-display(@display: flex) {
+  display: ~"-webkit-@{display}";
+  display: ~"-ms-@{display}box";
+  display: ~"-ms-@{display}";
+  display: @display;
+}
+.flex(@columns: initial) {
+  -webkit-flex: @columns;
+      -ms-flex: @columns;
+          flex: @columns;
+}
+.flex-wrap(@wrap: nowrap) {
+  -webkit-flex-wrap: @wrap;
+      -ms-flex-wrap: @wrap;
+          flex-wrap: @wrap;
+}
+
