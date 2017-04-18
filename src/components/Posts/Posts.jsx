@@ -5,7 +5,7 @@ var Posts = React.createClass({
     render(){
         var items = this.props.items.map((item)=>{
             return (
-                <div className="app-post-item">
+                <div key={item.id} className="app-post-item">
                     <div className="post-item__image-wrap">
                         <img className="post-item__image" src={item.meta_image} />
                     </div>
