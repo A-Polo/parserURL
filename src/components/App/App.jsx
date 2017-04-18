@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import Posts from '../Posts/Posts';
 import PostNew from '../PostNew/PostNew';
 import './App.less';
@@ -43,6 +44,23 @@ var App =  React.createClass ({
 
     if (content.match(urlRegex)){
       var url = content.match(urlRegex)[0];
+
+      // axios.get(APIURL,{url: url})
+      //   .then(function (data) {
+      //     title = data.title;
+      //     metaDescription = data.meta_description;
+      //     metaTitle = data.meta_title;
+      //     metaImage = data.meta_image;
+      //     urlLink = url;
+      //     this.setState({
+      //       metaDescription: metaDescription,
+      //       metaTitle:metaTitle,
+      //       metaImage:metaImage,
+      //       title:title,
+      //       urlLink:urlLink,
+      //       showNewPost: true
+      //     })
+      //   });
       $.ajax({
         url: APIURL,
         type: 'GET',
