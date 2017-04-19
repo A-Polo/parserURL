@@ -15,7 +15,8 @@ var PostNew = React.createClass({
                 item:{
                     meta_title: this.props.metaTitle,
                     meta_description: this.props.metaDescription,
-                    meta_image: this.props.metaImage
+                    meta_image: this.props.metaImage,
+                    link_news: this.props.urlLink
                 }
             }
         })
@@ -38,15 +39,17 @@ var PostNew = React.createClass({
                         onKeyDown={this.props.clearMeta} 
                     />
                 </header>
-                <ShowPreview
-                    showNewPost={this.props.showNewPost}
-                    metaDescription={this.props.metaDescription}
-                    metaTitle={this.props.metaTitle}
-                    metaImage={this.props.metaImage}
-                    handleClick={this.handleClick}
-                    clearMeta={this.props.clearMeta}
-                />
+                <div className="app-preview_wrap">
+                    <ShowPreview
+                        showNewPost={this.props.showNewPost}
+                        metaDescription={this.props.metaDescription}
+                        metaTitle={this.props.metaTitle}
+                        metaImage={this.props.metaImage}
+                        handleClick={this.handleClick}
+                        clearMeta={this.props.clearMeta}
+                    />
 
+                </div>
             </section>
         )
     }

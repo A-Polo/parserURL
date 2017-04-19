@@ -10,13 +10,15 @@
 
 .app-form{
 	.flex-display();
+	.flex-direction(column);
 	.justify-content(center);
+	.align-items(center);
 }
 
 .app-form__header{
 	.box-sizing(border-box);
 	width: @half-size;
-	padding-right: 20px;
+	padding: 0 10px;
 	.app-form__header_title{
 		font-size: 26px;
 		margin: 15px 0;
@@ -28,8 +30,11 @@
 		width: @full-size;
 	}
 }
-.app-form__preview{
+.app-preview_wrap{
 	.app-form__header();
+	.box-sizing(border-box);
+}
+.app-form__preview{
 	.box-sizing(border-box);
 	box-shadow: 0 0 2px rgba(0,0,0,0.6);
 	padding: 20px;
@@ -58,13 +63,20 @@
 .app-post-item{
 	.flex(1);
 	.box-sizing(border-box);
+	color: darken(@base-color, 70%);
+	cursor: pointer;
+	text-decoration: none;
 	max-width: 450px;
 	min-width: @full-size / 5;
-	margin: 10px 5px;
+	margin: 10px;
 	background-color: fadein(@base-color, 90%);
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 	border-radius: 5px;
 	padding: 5px;
+	&:hover{
+		text-decoration: underline;
+		color: darken(@base-color, 90%);
+	}
 	.post-item__image-wrap{
 		height: 250px;
 		.post-item__image{

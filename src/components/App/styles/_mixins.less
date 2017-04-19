@@ -41,6 +41,16 @@
   -ms-justify-content: @justify;
   justify-content: @justify;
 }
+.align-items(@align: stretch) {
+  -webkit-align-items: @align;
+  -ms-align-items: @align;
+  align-items: @align;
+}
+.flex-direction(@direction: row) {
+  -webkit-flex-direction: @direction;
+  -ms-flex-direction: @direction;
+  flex-direction: @direction;
+}
 .flex(@columns: initial) {
   -webkit-flex: @columns;
       -ms-flex: @columns;

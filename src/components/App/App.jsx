@@ -14,6 +14,7 @@ var App =  React.createClass ({
       metaTitle: null,
       metaDescription: null,
       metaImage: null,
+      urlLink: null,
       items: []
     }
   },
@@ -88,6 +89,7 @@ var App =  React.createClass ({
           metaTitle={this.state.metaTitle}
           metaDescription={this.state.metaDescription}
           metaImage={this.state.metaImage}
+          urlLink={this.state.urlLink}
           handleSubmit={this.handleSubmit}
         />
         <Posts
