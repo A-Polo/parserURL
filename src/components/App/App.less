@@ -8,9 +8,15 @@
 	padding: 20px;
 }
 
+.app-form{
+	.flex-display();
+	.justify-content(center);
+}
+
 .app-form__header{
-	margin: 5px auto;
-	width: @half-size - 1%;
+	.box-sizing(border-box);
+	width: @half-size;
+	padding-right: 20px;
 	.app-form__header_title{
 		font-size: 26px;
 		margin: 15px 0;
@@ -63,8 +69,8 @@
 		height: 250px;
 		.post-item__image{
 			width: @full-size;
-			height: @full-size;	
-		}	
+			height: @full-size;
+		}
 	}
 	.post-item__text-wrap{
 		.post-item__text-title{

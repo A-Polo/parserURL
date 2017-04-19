@@ -36,6 +36,11 @@
   display: ~"-ms-@{display}";
   display: @display;
 }
+.justify-content(@justify: flex-start) {
+  -webkit-justify-content: @justify;
+  -ms-justify-content: @justify;
+  justify-content: @justify;
+}
 .flex(@columns: initial) {
   -webkit-flex: @columns;
       -ms-flex: @columns;

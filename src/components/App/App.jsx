@@ -19,10 +19,9 @@ var App =  React.createClass ({
   },
 
   componentDidMount(){
-    $.getJSON(
-        MainAPI +'items',
-        (response) => { this.setState({ items: response }) }
-    )
+    axios.get(MainAPI +'items').then((response) => {
+      this.setState({items: response.data});
+    });
   },
 
   handleSubmit(item) {
@@ -32,9 +31,9 @@ var App =  React.createClass ({
 
   linkParser(){
 
-    var entryText = $('#entryText'),
+    var entryText = document.getElementById('entryText'),
         APIURL = MainAPI + 'links/linkpreview',
-        content = entryText.val(),
+        content = entryText.value,
         urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig,
         title = null,
         metaDescription = null,
@@ -45,42 +44,28 @@ var App =  React.createClass ({
     if (content.match(urlRegex)){
       var url = content.match(urlRegex)[0];
 
-      // axios.get(APIURL,{url: url})
-      //   .then(function (data) {
-      //     title = data.title;
-      //     metaDescription = data.meta_description;
-      //     metaTitle = data.meta_title;
-      //     metaImage = data.meta_image;
-      //     urlLink = url;
-      //     this.setState({
-      //       metaDescription: metaDescription,
-      //       metaTitle:metaTitle,
-      //       metaImage:metaImage,
-      //       title:title,
-      //       urlLink:urlLink,
-      //       showNewPost: true
-      //     })
-      //   });
-      $.ajax({
+      axios({
+        method: 'get',
         url: APIURL,
-        type: 'GET',
-        data: {url: url},
-        success: (data) => {
-          title = data.title;
-          metaDescription = data.meta_description;
-          metaTitle = data.meta_title;
-          metaImage = data.meta_image;
-          urlLink = url;
-          this.setState({
-            metaDescription: metaDescription,
-            metaTitle:metaTitle,
-            metaImage:metaImage,
-            title:title,
-            urlLink:urlLink,
-            showNewPost: true
-          })
+        params:{
+          url:url
         }
       })
+      .then((data) => {
+        title = data.data.title;
+        metaDescription = data.data.meta_description;
+        metaTitle = data.data.meta_title;
+        metaImage = data.data.meta_image;
+        urlLink = url;
+        this.setState({
+          metaDescription: metaDescription,
+          metaTitle:metaTitle,
+          metaImage:metaImage,
+          title:title,
+          urlLink:urlLink,
+          showNewPost: true
+        })
+      });
     }
   },
 

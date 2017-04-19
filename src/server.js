@@ -26,10 +26,7 @@ function renderHTML(componentHTML) {
       </head>
       <body>
         <div id="react-view">${componentHTML}</div>
-        <script
-              src="https://code.jquery.com/jquery-3.2.1.min.js"
-              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-              crossorigin="anonymous"></script>
+       
         <script type="application/javascript" src="${assetUrl}/public/assets/bundle.js"></script>
       </body>
     </html>
