@@ -1,6 +1,6 @@
 import React from 'react';
 
-var Posts = React.createClass({
+class Posts extends React.Component {
 
     render(){
         var items = this.props.items.map((item)=>{
@@ -22,6 +22,6 @@ var Posts = React.createClass({
             </section>
         )
     }
-});
+}
 
 export default Posts;

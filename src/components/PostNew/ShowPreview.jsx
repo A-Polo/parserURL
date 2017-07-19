@@ -1,6 +1,6 @@
 import React from 'react';
 
-var ShowPreview = React.createClass({
+class ShowPreview extends React.Component {
 
     render(){
         return(
@@ -16,6 +16,6 @@ var ShowPreview = React.createClass({
             </div>
         )
     }
-});
+}
 
 export default ShowPreview;

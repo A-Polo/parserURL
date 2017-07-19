@@ -2,11 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import ShowPreview from './ShowPreview';
 
-var PostNew = React.createClass({
+
+class PostNew extends React.Component {
 
     handleClick(){
-        var MainAPI = 'https://parser-url-api.herokuapp.com/';
-        var APIItems = MainAPI + 'items';
+        const MainAPI = 'https://parser-url-api.herokuapp.com/';
+        let APIItems = MainAPI + 'items';
 
         axios({
             method: 'post',
@@ -20,13 +21,13 @@ var PostNew = React.createClass({
                 }
             }
         })
-        .then((item) => {
-            console.log(item);
-            this.props.handleSubmit(item.data);
-        });
+            .then((item) => {
+                console.log(item);
+                this.props.handleSubmit(item.data);
+            });
 
         this.props.clearMeta();
-    },
+    }
 
 
     render(){
@@ -35,8 +36,8 @@ var PostNew = React.createClass({
                 <header className="app-form__header">
                     <h1 className="app-form__header_title">Enter any URL (ex. https://lenta.ru/):</h1>
                     <input type="text" id="entryText"  className="app-form__header_text"
-                        onKeyUp={this.props.linkParser} 
-                        onKeyDown={this.props.clearMeta} 
+                           onKeyUp={this.props.linkParser}
+                           onKeyDown={this.props.clearMeta}
                     />
                 </header>
                 <div className="app-preview_wrap">
@@ -45,7 +46,7 @@ var PostNew = React.createClass({
                         metaDescription={this.props.metaDescription}
                         metaTitle={this.props.metaTitle}
                         metaImage={this.props.metaImage}
-                        handleClick={this.handleClick}
+                        handleClick={this.handleClick.bind(this)}
                         clearMeta={this.props.clearMeta}
                     />
 
@@ -53,6 +54,6 @@ var PostNew = React.createClass({
             </section>
         )
     }
-});
+}
 
 export default PostNew;
