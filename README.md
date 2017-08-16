@@ -1,13 +1,9 @@
 **Parser URL**
 
-building stack of App by 'https://habrahabr.ru/post/309958/'
-
-
-
 Using: 
 
     - Rails API (heroku app)
-    - React.js
+    - React.js + Redux
     - Webpack
     - Node.js
     - Less
@@ -21,8 +17,6 @@ Install:
     
 Run:
     
-    - in first tab of terminal "npm run nodemon"
-    - in the second tab of terminal "npm run webpack-devserver"
-    
+    - in the first tab of terminal run command "npm run nodemon"
+    - in the second tab of terminal run command "npm run webpack-devserver"
     - enter any link example 'http://your_link.com'
-    

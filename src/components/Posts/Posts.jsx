@@ -3,7 +3,7 @@ import React from 'react';
 class Posts extends React.Component {
 
     render(){
-        var items = this.props.items.map((item)=>{
+        const items = this.props.items.map((item)=>{
             return (
                 <a href={item.link_news} key={item.id} className="app-post-item" target="_blank">
                     <div className="post-item__image-wrap">
