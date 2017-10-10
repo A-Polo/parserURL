@@ -6,6 +6,7 @@ import NavItem  from 'react-bootstrap/lib/NavItem';
 import './styles/bootstrap.css';
 import { Link } from 'react-router';
 import LinkContainer from 'react-router-bootstrap/lib/LinkContainer';
+import { OAuthButton, SignOutButton } from 'components/AuthButtons';
 
 const propTypes = {
 	children: PropTypes.node
@@ -31,6 +32,8 @@ class App extends Component {
 								<LinkContainer to='/counters'>
 									<NavItem>Счетчики</NavItem>
 								</LinkContainer>
+									<OAuthButton provider='github' />
+									<SignOutButton />
 							</Nav>
 						</Navbar.Collapse>
 					</Navbar>
